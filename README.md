@@ -68,7 +68,7 @@
 
 * [땡글이](http://ddanggle.github.io/)
 
-파이썬 팁에 관해 번역하며 했던 고민들이나, 이야기들은 블로그를 통해 풀려고 합니다. 번역이 이상하거나, 콘텐츠가 업데이트되어 확인하지 못한 경우에는 번역자 [땡글이](mailto:DDanggle.y@gmail.com)로 메일을 주시거나 [풀리퀘](https://github.com/DDanggle/interpy-kr) 해주시면 수정하도록 하겠습니다.
+파이썬 팁에 관해 번역하며 했던 고민들이나, 이야기들은 블로그를 통해 풀려고 합니다. 번역이 이상하거나, 콘텐츠가 업데이트되어 확인하지 못한 경우에는 번역자 [땡글이](mailto:ddanggle.y@gmail.com)로 메일을 주시거나 [풀리퀘](https://github.com/DDanggle/interpy-kr) 해주시면 수정하도록 하겠습니다.
 
 ---
 
