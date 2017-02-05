@@ -17,7 +17,7 @@
 
 ---
 
-추가: 이 책을 쓴 것에 대해서 팁을 주고 싶다면,  [Gumroad](https://gum.co/intermediate_python) 에서 기부버전을 구매할 수 있습니다. 이와 별개로, 이 책이 여러분께 많은 도움이 되었다면, 여러분들의 이야기를 [제게](yasoob.khld@gmail.com) 공유해주시면 정말 감사합니다.
+추가: 이 책을 쓴 것에 대해서 팁을 주고 싶다면,  [Gumroad](https://gum.co/intermediate_python) 에서 기부버전을 구매할 수 있습니다. 이와 별개로, 이 책이 여러분께 많은 도움이 되었다면, 여러분들의 이야기를 [제게](mailto:yasoob.khld@gmail.com) 공유해주시면 정말 감사합니다.
 
 ---
 
@@ -60,18 +60,20 @@
 
 * [Philipp Hagemeister](https://github.com/phihag)
 
+필립이 오픈함수에 대해서 써주셨습니다. 고맙습니다! 
+
 ---
 
 ### 역자
 
 * [땡글이](http://ddanggle.github.io/)
 
-파이썬 팁에 관해 번역하며 했던 고민들이나, 이야기들은 블로그를 통해 풀려고 합니다. 번역이 이상하거나, 콘텐츠가 업데이트되어 확인하지 못한 경우에는 번역자 [땡글이](DDanggle.y@gmail.com)이나 풀리퀘를 해주시면 수정하도록 하겠습니다.
+파이썬 팁에 관해 번역하며 했던 고민들이나, 이야기들은 블로그를 통해 풀려고 합니다. 번역이 이상하거나, 콘텐츠가 업데이트되어 확인하지 못한 경우에는 번역자 [땡글이](mailto:DDanggle.y@gmail.com)로 메일을 주시거나 [풀리퀘](https://github.com/DDanggle/interpy-kr) 해주시면 수정하도록 하겠습니다.
 
 ---
 
 ### 라이센스
 
 이 책은 [CC라이센스](http://creativecommons.org/licenses/by-nc-sa/4.0/) 하에 출판되었습니다.\(CC BY-NC-SA 4.0\)  
-누군가 이책을 추천하거나, 사용하는 것을 보신다면 [제게](yasoob.khld@gmail.com) 알려주세요.
+누군가 이책을 추천하거나, 사용하는 것을 보신다면 [제게](mailto:yasoob.khld@gmail.com) 알려주세요.
 
