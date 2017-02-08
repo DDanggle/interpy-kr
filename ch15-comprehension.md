@@ -1,4 +1,4 @@
-# chapter 15 comprehension
+# 15. comprehension
 
 _역주: 컴프리헨션은 _`내포`_로써도 많이 번역되지만, 어감과 느낌을 고려하여 컴프리헨션 그대로 번역하였습니다._
 
