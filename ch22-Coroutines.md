@@ -55,5 +55,5 @@ search = grep('coroutine')
 search.close()
 ```
 
-이외에도 코루틴에 대한 정보는 많습니다. David Beazley의 [멋진 자료]((http://www.dabeaz.com/coroutines/Coroutines.pdf)를 보시기를 추천합니다.
+이외에도 코루틴에 대한 정보는 많습니다. David Beazley의 [멋진 자료](http://www.dabeaz.com/coroutines/Coroutines.pdf)를 보시기를 추천합니다.
 
