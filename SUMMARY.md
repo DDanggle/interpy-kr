@@ -10,7 +10,7 @@
 * [데코레이터](ch7-Decorators.md)
 * [전역변수 & 반환](ch8-Global-Return.md)
 * [변형\(Mutation\)](ch9-Mutation.md)
-* [\_\_slots\_\_의마술](ch10-slots-magic.md)
+* [\_\_slots\_\_의 마법](ch10-slots-magic.md)
 * [가상환경](ch11-Virtual-Environment.md)
 * [콜렉션\(collections\)](ch12-Collections.md)
 * [열거\(enumerate\)](ch13-Enumerate.md)
