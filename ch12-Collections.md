@@ -8,6 +8,7 @@
 * counter
 * deque
 * namedtuple
+* enum.Enum\(모듈 외부;파이썬 3.4 이상\)
 
 ### 12.1 `defaultdict`
 
@@ -27,7 +28,7 @@ colours = (
 
 favourite_colours = defaultdict(list)
 
-for name, colour in order:
+for name, colour in colours:
   favourite_colours[name].append(colour)
 
 print(favourite_colours)
@@ -288,6 +289,4 @@ Species.cat
 ```
 
 `collection` 모듈을 빠르게 훑어보았습니다. 공식문서를 꼭 읽어보시기를 바랍니다.
-
-
 
