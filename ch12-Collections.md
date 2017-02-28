@@ -71,7 +71,42 @@ print(json.dumps(some_dict))
 # Output: {"colours": {"favourite": "노랑"}}
 ```
 
-### 12.2 `counter`
+### 12.2 OrderedDict
+
+OrderedDict는 처음 삽입 될 때의 순서대로 항목을 정렬 된 상태로 유지합니다.기존 키의 값을 덮어 쓰더라도 해당 키의 위치는 변경되지 않습니다.   
+그러나 항목을 삭제했다가 다시 삽입하면 키가 사전 끝으로 이동합니다.
+
+##### Problem:
+
+```python
+colours =  {"Red" : 198, "Green" : 170, "Blue" : 160}
+for key, value in colours.items():
+    print(key, value)
+# Output:
+#   Green 170
+#   Blue 160
+#   Red 198
+# Entries are retrieved in an unpredictable order
+```
+
+##### Soloution:
+
+```python
+from collections import OrderedDict
+
+colours = OrderedDict([("Red", 198), ("Green", 170), ("Blue", 160)])
+for key, value in colours.items():
+    print(key, value)
+# Output:
+#   Red 198
+#   Green 170
+#   Blue 160
+# Insertion order is preserved
+```
+
+### 
+
+### 12.3 `counter`
 
 Counter는 특정 아이템의 존재를 헤아리는 함수 입니다. 예를 들면 각자의 선호색깔을 헤아릴 때 사용할 수 있습니다.
 
@@ -106,7 +141,7 @@ with open('filename', 'rb') as f:
 print (line_count)
 ```
 
-### 12.3 `deque`
+### 12.4 `deque`
 
 디큐는 큐는 추가나 삭제가 양 쪽에서 가능한 double ended queue를 제공합니다. 먼저 collections 라이브러리로부터 deque 모듈을 임포트하면 됩니다.
 
@@ -174,7 +209,7 @@ print(d)
 
 이상 collections 모듈의 기본적인 소개였습다. 여기까지 읽으셨다면 꼭 공식문서를 읽어보시길 바랍니다.
 
-### 12.4 `namedtuple`
+### 12.5 `namedtuple`
 
 튜플에 대해서는 잘 알 것입니다. 튜플은 불변\(immutable\) 파이썬 객체 시퀀스들을 저장할 수 있는 가벼운 객체입니다. 매우 중요한 몇가지를 제외하고는 리스트와 거의 비슷합니다. 가장 리스트와 다른 점은 _**튜플 안의 값들을 수정할 수 없다**_는 것입니다. 튜플 안의 값에 접근하기 위해서는 아래와 같이 정수 인덱스값을 사용하면 됩니다.
 
@@ -239,7 +274,7 @@ print(perry._asdict())
 # Output: OrderedDict([('name', 'Perry'), ('age', 31), ...
 ```
 
-### 12.5 `enum.Enum` \(python 3.4+\)
+### 12.6 `enum.Enum` \(python 3.4+\)
 
 또 다른 유용한 콜렉션으로는 enum 객체가 있습니다. 파이썬 3.4 혹은 그 이상\(PyPI에서도 `enum34`라는 이름으로 존재합니다.\) 에서 `enum` 모듈 안에 존재합니다.
 
