@@ -73,20 +73,20 @@ print(json.dumps(some_dict))
 
 ### 12.2 OrderedDict
 
-OrderedDict는 처음 삽입 될 때의 순서대로 항목을 정렬 된 상태로 유지합니다.기존 키의 값을 덮어 쓰더라도 해당 키의 위치는 변경되지 않습니다.   
+OrderedDict는 처음 삽입 될 때의 순서대로 항목을 정렬 된 상태로 유지합니다.기존 키의 값을 덮어 쓰더라도 해당 키의 위치는 변경되지 않습니다.  
 그러나 항목을 삭제했다가 다시 삽입하면 키가 사전 끝으로 이동합니다.
 
 ##### Problem:
 
 ```python
-colours =  {"Red" : 198, "Green" : 170, "Blue" : 160}
+colours =  {"빨강" : 198, "녹색" : 170, "파랑" : 160}
 for key, value in colours.items():
     print(key, value)
 # Output:
-#   Green 170
-#   Blue 160
-#   Red 198
-# Entries are retrieved in an unpredictable order
+#   녹색 170
+#   파랑 160
+#   빨강 198
+# 예측할 수 없는 순서로 항목이 검색됩니다.
 ```
 
 ##### Soloution:
@@ -94,14 +94,14 @@ for key, value in colours.items():
 ```python
 from collections import OrderedDict
 
-colours = OrderedDict([("Red", 198), ("Green", 170), ("Blue", 160)])
+colours = OrderedDict([("빨강", 198), ("녹색", 170), ("파랑", 160)])
 for key, value in colours.items():
     print(key, value)
 # Output:
-#   Red 198
-#   Green 170
-#   Blue 160
-# Insertion order is preserved
+#   빨강 198
+#   녹색 170
+#   파랑 160
+# 입력 순서가 유지 됩니다.
 ```
 
 ### 
