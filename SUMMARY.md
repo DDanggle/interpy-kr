@@ -20,6 +20,7 @@
 * [람다](ch17-Lambdas.md)
 * [한줄 명령어\(oneLiners\)](ch18-oneLiners.md)
 * [For-else](ch19-For-Else.md)
+* [파이썬 C 확장](c.md)
 * [open 함수](ch20-open-function.md)
 * [파이썬 2+3 호환](ch21-Targeting-python.md)
 * [코루틴](ch22-Coroutines.md)
