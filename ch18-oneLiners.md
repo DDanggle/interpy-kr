@@ -14,7 +14,7 @@ python -m SimpleHTTPServer
 python3 -m http.server
 ```
 
-##### 예쁘게 출력하기\(Pretty printing\)
+##### 예쁘게 출력하기\(Pretty Printing\)
 
 list와  dictionary를 파이썬 repl안에 있는 예쁜 형태로 출력할 수 있습니다. 다음은 관련 코드 입니다.
 
@@ -35,7 +35,7 @@ cat file.json | python -m json.tools
 
 ##### 스크립트를 프로파일링하기\(Profiling a script\)
 
-스크립트의 병목현상을 정확하게 짚고자 할떄  정말 유용합니다.
+스크립트의 병목현상을 정확하게 짚고자 할 때  정말 유용합니다.
 
 ```python
 python -m cProfile my_script.py
@@ -53,6 +53,8 @@ python -c "import csv, json; (print json.dumps(list(csv.reader(open('csv_file.cs
 
 `csv_file.csv` 파일을 해당하는 파일로 바꾸는 것을 잊지마세요.
 
+##### 
+
 ##### 리스트 중첩 줄이기 \(List Flattening\)
 
 `itertools`패키지의 `itertools.chain.from_iterable`사용해서 간단하고 쉽게 리스트 중첩을 줄일 수 있습니다.  
@@ -64,9 +66,9 @@ print(list(itertools.chain.from_iterable(a_list)))
 # Output: [1, 2, 3, 4, 5, 6]
 ```
 
-##### 한-줄 명령어 생성자
+##### 한-줄 생성자
 
-클래스를 초기화할 때 많은 표준 할당을 피하려면,
+클래스를 초기화 할 때 많은 표준 할당을 피하려면,
 
 ```python
 class A(object):
