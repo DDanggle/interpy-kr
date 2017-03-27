@@ -15,11 +15,11 @@ dir(my_list)
 # ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
 ```
 
-위 객체 탐구는 모든 메소드 이름을 리스트로 제공해 줍니다. 메소드 이름을 다시 불러올 필요가 없기 때문에 유용합니다. 만약 어떤 전달 인자도 없이 dir\(\)을 실행하면 현재 스코프내의 모든 이름들을 반환할 것입니다.
+위 객체 탐구는 리스트의 모든 메소드 이름을 제공해 줍니다. 메소드 이름을 다시 불러올 필요가 없기 때문에 유용합니다. 만약 어떤 전달 인자도 없이 dir\(\)을 실행하면 현재 스코프내의 모든 이름들을 반환할 것입니다.
 
 ### 14.2 `type` 과 `id`
 
-타입 함수는 함수의 타입을 반환합니다.
+type 함수는 객체의 타입을 반환합니다. 예를 들어
 
 ```python
 print(type(􏰀􏰀''))
@@ -46,9 +46,9 @@ print(id(name))
 # Output: 139972439030304
 ```
 
-### 14.3 inspect module
+### 14.3 `inspect` module
 
-`inspect`모듈은 또한 살아있는 객체 정보를 알아내기 위한 유용한 함수들을 제공합니다. 예를 들면, 실행되고 있는 객체들의 요소들을 확인할 수 있습니다.
+`inspect`모듈은 또한 살아있는 객체 정보를 알아내기 위한 몇가지 유용한 함수들을 제공합니다. 예를 들어 다음을 실행하여 개체의 멤버를 확인할 수 있습니다.
 
 ```python
 import inspect
@@ -56,5 +56,5 @@ print(inspec.getmembers(str))
 # Output: [(􏰀__add__􏰀, <slot wrapper 􏰀__add__􏰀 of ... ...
 ```
 
-객체탐구 중에서 코드를 유용하게 만들어 줄 다양한 메소드들이 있습니다. 원하신다면 더 찾아보세요!
+객체 탐구를 도와주는 몇 가지 다른 메소드들이 있습니다. 원하신다면 그것들을 탐구할 수 있습니다.
 

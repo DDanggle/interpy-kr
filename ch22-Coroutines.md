@@ -36,7 +36,7 @@ def grep(pattern):
 예제를 보겠습니다.
 
 ```python
-search = grep('coroutine')
+search = grep('코루틴')
 next(search)
 # Output: Searching for coroutine
 search.send("너를 사랑해")

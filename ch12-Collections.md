@@ -1,5 +1,3 @@
-# 12. Collections
-
 파이썬은 콜렉션\(collections\)이라는 컨테이너 데이터 타입들이 포함된 모듈들을 제공합니다. 그 중 몇몇에 대해서 알아보고, 유용한 점에 대해서 이야기 해보겠습니다.
 
 앞으로 이야기 해볼 것들은 다음과 같습니다.
@@ -8,6 +6,7 @@
 * counter
 * deque
 * namedtuple
+* enum.Enum\(모듈 외부;파이썬 3.4 이상\)
 
 ### 12.1 `defaultdict`
 
@@ -27,7 +26,7 @@ colours = (
 
 favourite_colours = defaultdict(list)
 
-for name, colour in order:
+for name, colour in colours:
   favourite_colours[name].append(colour)
 
 print(favourite_colours)
@@ -70,9 +69,44 @@ print(json.dumps(some_dict))
 # Output: {"colours": {"favourite": "노랑"}}
 ```
 
-### 12.2 `counter`
+### 12.2 OrderedDict
 
-Counter는 특정 아이템의 존재를 헤아리는 함수 입니다. 예를 들면 각자의 선호색깔을 헤아릴 때 사용할 수 있습니다.
+OrderedDict는 처음 삽입 될 때의 순서대로 항목을 정렬 된 상태로 유지합니다.기존 키의 값을 덮어 쓰더라도 해당 키의 위치는 변경되지 않습니다.  
+그러나 항목을 삭제했다가 다시 삽입하면 키가 사전 끝으로 이동합니다.
+
+##### Problem:
+
+```python
+colours =  {"빨강" : 198, "녹색" : 170, "파랑" : 160}
+for key, value in colours.items():
+    print(key, value)
+# Output:
+#   녹색 170
+#   파랑 160
+#   빨강 198
+# 예측할 수 없는 순서로 항목이 검색됩니다.
+```
+
+##### Soloution:
+
+```python
+from collections import OrderedDict
+
+colours = OrderedDict([("빨강", 198), ("녹색", 170), ("파랑", 160)])
+for key, value in colours.items():
+    print(key, value)
+# Output:
+#   빨강 198
+#   녹색 170
+#   파랑 160
+# 입력 순서가 유지 됩니다.
+```
+
+### 
+
+### 12.3 `counter`
+
+Counter는 특정 아이템의 개수를 세는 함수 입니다. 예를 들면 각자의 선호 색깔을 세는데 사용할 수 있습니다.
 
 ```python
 from collections import defaultdict
@@ -97,7 +131,7 @@ print(favs)
 # })
 ```
 
-또 파일 안에서 가장 많이 반복되는 줄을 세는 데 사용할 수도 있습니다. 예를 들면,
+또 파일 안에서 가장 많이 반복되는 줄을 세는 데 사용할 수 도 있습니다. 예를 들면,
 
 ```python
 with open('filename', 'rb') as f:
@@ -105,21 +139,21 @@ with open('filename', 'rb') as f:
 print (line_count)
 ```
 
-### 12.3 `deque`
+### 12.4 `deque`
 
-디큐는 큐는 추가나 삭제가 양 쪽에서 가능한 double ended queue를 제공합니다. 먼저 collections 라이브러리로부터 deque 모듈을 임포트하면 됩니다.
+deque는 추가나 삭제가 양 쪽에서 가능한 double ended queue를 제공합니다. 먼저 collections 라이브러리로부터 deque 모듈을 임포트하면 됩니다.
 
 ```python
 from collections import deque
 ```
 
-이제 deque 객체를 실행시켜보겠습니다.
+이제 deque 객체를 인스턴스화 할 수 있습니다.
 
 ```
 d = deque()
 ```
 
-파이썬의 리스트처럼 실행되고, 리스트와 비슷한 메소드들을 문제없이 실행해줍니다. 아래와 같이 사용할 수도 있습니다.
+파이썬 리스트처럼 작동하고 비슷한 메소드를 제공합니다. 예를 들면 다음과 같습니다 :
 
 ```python
 d = deque()
@@ -154,8 +188,7 @@ print(d)
 # Output: deque([1, 2, 3])
 ```
 
-또한 deque가 가질 수 있는 아이템의 수에 제한을 둘 수도 있습니다. 이 방법을 사용해서 디큐에서 빠지는 값의 수 제한을 걸어두면, 다른 쪽 끝에서 간단하게 뺴낼 수 있습니다.  
-아래의 예시를 보면서 설명하는 것이 좀 더 쉬울 것 같습니다.
+또한 deque가 가질 수 있는 아이템의 수에 제한을 둘 수도 있습니다. 이 방법을 사용하면 아이템 개수가 최대에 도달했을때  반대쪽 끝에서 아이템들이 튀어 나옵니다. 아래의 예시를 보면서 설명하는 것이 좀 더 쉬울 것 같습니다.
 
 ```python
 d = deque(maxlen=30)
@@ -171,11 +204,9 @@ print(d)
 # Output: deque([0, 1, 2, 3, 4, 5, 6, 7, 8])
 ```
 
-이상 collections 모듈의 기본적인 소개였습다. 여기까지 읽으셨다면 꼭 공식문서를 읽어보시길 바랍니다.
+### 12.5 `namedtuple`
 
-### 12.4 `namedtuple`
-
-튜플에 대해서는 잘 알 것입니다. 튜플은 불변\(immutable\) 파이썬 객체 시퀀스들을 저장할 수 있는 가벼운 객체입니다. 매우 중요한 몇가지를 제외하고는 리스트와 거의 비슷합니다. 가장 리스트와 다른 점은 _**튜플 안의 값들을 수정할 수 없다**_는 것입니다. 튜플 안의 값에 접근하기 위해서는 아래와 같이 정수 인덱스값을 사용하면 됩니다.
+튜플에 대해서는 잘 알 것입니다. 튜플은 기본적으로 값의 시퀀스를 쉼표로 구분하여 저장할 수 있는 불변\(immutable\) 리스트입니다. 리스트와 거의비슷하지만 몇가지 중요한 차이점이 있습니다. 주요한 점은 리스트와 달리, 튜플에 있는 항목을 **재 할당 할 수 없다**는 것입니다. 튜플 안의 값에 접근하기 위해서는 아래와 같이 정수 인덱스를 사용합니다.
 
 ```
 man = ('알리', 30)
@@ -183,7 +214,7 @@ print(man[0])
 # Output: 알리
 ```
 
-그렇다면 네임 튜플은 뭘까요? 튜플을 단순한 실행을 하기 편리한 컨테이너로 바꾸어줍니다. 네임 튜플을 사용하면 튜플 안의 값들에 접근하기 위해 정수 인덱스 값들을 사용할 필요가 없습니다. 사전형\(dictionaries\)과 비슷하다고 생각할 수도 있겠지만, 사전형과 달리 불변입니다.
+그렇다면 namedtuples는 무엇 일까요? 간단한 작업을 위해 튜플을 편리한 컨테이너로 변환합니다. namedtuples을 사용하면 튜플 안의 값들에 접근하기 위해 정수 인덱스 값들을 사용할 필요가 없습니다. 사전형\(dictionaries\)과 비슷하다고 생각할 수도 있겠지만, 사전형과 달리 불변입니다.
 
 ```python
 from collections import namedtuple
@@ -198,10 +229,8 @@ print(perry.name)
 # Output: 'perry'
 ```
 
-위에서 볼 수 있듯이 튜플의 값들에 접근하려고 할 때, .와 그 옆에 불러올 이름을 적으면 됩니다. 좀 더 살펴보겠습니다. 네임튜플은 인자 두개를 필요로 합니다. 튜플의 `이름`과 튜플의 `필드 이름` 이죠. 위 예시에서 튜플의 `이름`은 'Animal'이고, 튜플의 `field_names`은 'name', 'age', 'cat'입니다. 네임튜플은 튜플들을 _자가문서화\(self-document\)_ 시킵니다.  
-예시 코드를 잘 보면 무슨 일이 일어나는지 쉽게 이해될 것입니다.  
-그리고 정수의 인덱스의 값을 사용해서 튜플의 요소에 접근하지 않기에 코드가 어떤 역할을 하는 지 더 명확하게 보여줍니다. 게다가, _**"네임튜플" 인스턴스는 인스턴스당 사전들을 가지지 않기**_에, 일반 튜플보다 더 가볍고 메모리 사용량을 줄일 수 있습니다.  
-그래서 사전형보다도 더 빠릅니다. 그러나 튜플이기 때문에 _**네임튜플의 속성들은 불변**임을_을 명심해야합니다. 아래와 같이 실행될 수 없습니다.
+위에서 볼 수 있듯이 "."연산자를 사용하여 이름만으로 튜플의 멤버에 액세스 할 수 있음 을 알 수 있습니다. 좀 더 살펴보겠습니다. 네임튜플은 인자 두개를 필요로 합니다. 튜플의 `이름`과 튜플의 `필드 이름` 이죠. 위 예시에서 튜플의 `이름`은 'Animal'이고, 튜플의 `field_names`은 'name', 'age', 'cat'입니다. 네임튜플은 튜플들을 _자가문서화\(self-document\)_ 시킵니다. 예시 코드를 잘 보면 무슨 일이 일어나는지 쉽게 이해될 것입니다.  
+튜플의 멤버에 액세스하기 위해 정수 인덱스를 사용할 필요가 없으므로 코드를 유지 관리하기가 더 쉽습니다. 게다가, _**"네임튜플" 인스턴스는 인스턴스당 사전들을 가지지 않으므로**_, 일반 튜플보다 더 가볍고 메모리 사용량을 줄일 수 있습니다. 그래서 사전형보다도 더 빠릅니다. 그러나 튜플이기 때문에 _**네임튜플의 속성들은 불변**임을_을 명심해야합니다. 아래와 같이 실행될 수 없습니다.
 
 ```python
 from collections import namedtuple
@@ -215,7 +244,7 @@ perry.age = 42
 #     AttributeError: can't set attribute
 ```
 
-코드를 자가문서화\(self-documeting\)할 때는 꼭 네임튜플을 사용해야합니다. 또 _일반적인 튜플과 호환\(backward compatible\)_됩니다.  
+코드를 자가문서화\(self-documeting\)할 때는 꼭 네임튜플을 사용해야합니다. 또 _일반적인 튜플과 하위호환\(backward compatible\)_됩니다.  
 그래서 네임튜플은 기존 튜플처럼 정수 인덱스 값들을 사용할 수도 있습니다.
 
 ```python
@@ -227,7 +256,7 @@ print(perry[0])
 # Output: perry
 ```
 
-앞서 말한 것 만큼 중요한 것으로 네임튜플을 사전형으로 아래와 같이 변환할 수도 있습니다.
+마지막으로 네임튜플을 사전형으로 아래와 같이 변환할 수 있습니다.
 
 ```python
 from collections import namedtuple
@@ -238,13 +267,11 @@ print(perry._asdict())
 # Output: OrderedDict([('name', 'Perry'), ('age', 31), ...
 ```
 
-### 12.5 `enum.Enum` \(python 3.4+\)
+### 12.6 `enum.Enum` \(python 3.4+\)
 
-또 다른 유용한 콜렉션으로는 enum 객체가 있습니다. 파이썬 3.4 혹은 그 이상\(PyPI에서도 `enum34`라는 이름으로 존재합니다.\) 에서 `enum` 모듈 안에 존재합니다.
+또 다른 유용한 콜렉션으로는 enum 객체가 있습니다. 파이썬 3.4이상\(PyPI에서도 `enum34`라는 이름으로 존재합니다.\) 에서 `enum` 모듈 안에 존재합니다. 열거 \(열거 형\)는 기본적으로 다양한 물건을 정리하는 방법입니다.
 
-마지막 동물 네임튜플 예시로 생각 해보겠습니다. `type` 필드를 가지고 있지만, 문제는 이 타입이 문자열\(string\)입니다. 이는 문제를 만들어낼 수도 있습니다. 사용자가 만약 shit키를 누르고 `Cat`이라고 입력하면 어떡하죠? `CAT`이나 `kitten`은요?
-
-Enumeration은 문자열\(string\)을 사용하지않음으로써 문제를 해결하도록 도와줍니다. 아래의 예시를 보겠습니다.
+마지막 예제의 Animal 네임튜플을 살펴보겠습니다. 이것은`type` 필드를 가지고 있습니다. 그러나 문제는 이 타입이 문자열\(string\)이라는 것입니다. 이는 몇가지 문제를 만들어낼 수도 있습니다. 사용자가 만약 shit키를 누르고 `Cat`이라고 입력하면 어떻게 될까요? `CAT`이나 `kitten`은 어떨까요? Enumeration은 문자열\(string\)을 사용하지 않음으로써 문제를 해결하도록 도와줍니다. 아래의 예시를 보겠습니다.
 
 ```python
 from collections import namedtuple
@@ -268,7 +295,7 @@ class Species(Enum):
 
 Animal = namedtuple('Animal', 'name age type')
 perry = Animal(name="Perry", age=31, type=Species.cat)
-drogon = Animal(name="Drogon", age=4, type=Species.dragon)
+dragon = Animal(name="Drogon", age=4, type=Species.dragon)
 tom = Animal(name="Tom", age=75, type=Species.cat)
 charlie = Animal(name="Charlie", age=2, type=Species.kitten)
 
@@ -281,6 +308,8 @@ True
 
 위 방법은 에러를 더 적게 발생시킵니다. 그리고 이름 타입에만 열거콜렉션을 사용하면 됩니다.
 
+열거형 멤버에 접근하는 3가지 방법이 있습니다. 예를들어 아래 코드는 모두 cat에 대한 값을 얻습니다.
+
 ```python
 Species(1)
 Species['cat']
@@ -288,6 +317,4 @@ Species.cat
 ```
 
 `collection` 모듈을 빠르게 훑어보았습니다. 공식문서를 꼭 읽어보시기를 바랍니다.
-
-
 

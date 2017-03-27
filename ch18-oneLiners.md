@@ -1,22 +1,22 @@
-# 18. oneLiners
+# 18. One-Liners
 
-이 챕터에서는가끔 정말 도움이 될 수 있는 한 줄 파이썬 명령\(one liner Python commander\)에서 대해서 알려드리겠습니다.
+이 챕터에서는 정말 도움이 될 수 있는 한 줄짜리 파이썬 명령어\(one liner Python commander\)를 보여 드리겠습니다.
 
-##### 간단한 웹서버\(simple Webserver\)
+##### 간단한 웹서버\(Simple Web Server\)
 
-네트워크를 통해 파일을 빨리 공유하고 싶은 적은 없었나요? 잘 오셨습니다. 파이썬은 딱 여러분을 위한 비슷한 도구를 제공합니다. 네트워크로 공유하고자 하는 디렉토리로 가서 터미널에 아래와 같은 명령어를 치세요.
+네트워크를 통해 파일을 빨리 공유하고 싶은 적은 없었나요? 잘 오셨습니다. 파이썬은 딱 여러분을 위한 기능을 제공합니다. 네트워크로 서비스 하려는 디렉토리로 가서 터미널에 아래와 같은 명령어를 치세요.
 
 ```python
 # python 2
-python -m simpleHTTPServer
+python -m SimpleHTTPServer
 
 # python 3
 python3 -m http.server
 ```
 
-##### 예쁘게 출력하기\(Pretty printing\)
+##### 예쁘게 출력하기\(Pretty Printing\)
 
-리스트 사전형을 파이썬 repl안에 있는 예쁜 형태로 출력할 수 있습니다. 좀 더 적절한 코드를 보여드리겠습니다.
+list와  dictionary를 파이썬 repl안에 있는 예쁜 형태로 출력할 수 있습니다. 다음은 관련 코드 입니다.
 
 ```python
 from pprint import pprint
@@ -35,7 +35,7 @@ cat file.json | python -m json.tools
 
 ##### 스크립트를 프로파일링하기\(Profiling a script\)
 
-스크립트의 병목현상을 정확하게 짚고자 할떄  정말 유용합니다.
+스크립트의 병목현상을 정확하게 짚고자 할 때  정말 유용합니다.
 
 ```python
 python -m cProfile my_script.py
@@ -53,9 +53,11 @@ python -c "import csv, json; (print json.dumps(list(csv.reader(open('csv_file.cs
 
 `csv_file.csv` 파일을 해당하는 파일로 바꾸는 것을 잊지마세요.
 
+##### 
+
 ##### 리스트 중첩 줄이기 \(List Flattening\)
 
-`itertools`패키지의 `itertools.chain.from_iterable`사용해서 간단하고 쉽게 리스트 중첩을 줄일 수 있습니다.   
+`itertools`패키지의 `itertools.chain.from_iterable`사용해서 간단하고 쉽게 리스트 중첩을 줄일 수 있습니다.  
 간단한 예시를 보면,
 
 ```python
@@ -64,9 +66,9 @@ print(list(itertools.chain.from_iterable(a_list)))
 # Output: [1, 2, 3, 4, 5, 6]
 ```
 
-##### 한-줄 명령어 생성자
+##### 한-줄 생성자
 
-클래스를 초기화할 때 많은 표준 할당을 피하려면, 
+클래스를 초기화 할 때 많은 표준 할당을 피하려면,
 
 ```python
 class A(object):
