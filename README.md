@@ -67,8 +67,9 @@
 ### 역자
 
 * [땡글이](http://ddanggle.github.io/)
+* 추가로 [**junhyungjin**](https://github.com/junhyungjin) 께서 많이 도와주셨습니다. 모든 글을 꼼꼼히 읽고 피드백 해주셨습니다. 
 
-파이썬 팁에 관해 번역하며 했던 고민들이나, 이야기들은 블로그를 통해 풀려고 합니다. 번역이 이상하거나, 콘텐츠가 업데이트되어 확인하지 못한 경우에는 번역자 [땡글이](mailto:ddanggle.y@gmail.com)로 메일을 주시거나 [풀리퀘](https://github.com/DDanggle/interpy-kr) 해주시면 수정하도록 하겠습니다.
+이썬 팁에 관해 번역하며 했던 고민들이나, 이야기들은 블로그를 통해 풀려고 합니다. 번역이 이상하거나, 콘텐츠가 업데이트되어 확인하지 못한 경우에는 번역자 [땡글이](mailto:ddanggle.y@gmail.com)로 메일을 주시거나 [풀리퀘](https://github.com/DDanggle/interpy-kr) 해주시면 수정하도록 하겠습니다.
 
 ---
 
