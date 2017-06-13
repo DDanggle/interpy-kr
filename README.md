@@ -36,7 +36,7 @@
 * [가상환경](ch11-Virtual-Environment.md)
 * [콜렉션\(collections\)](ch12-Collections.md)
 * [열거\(enumerate\)](ch13-Enumerate.md)
-* [객체 탐구](ch14-Object introspection.md)
+* [객체 탐구](ch14-Object-introspection.md)
 * [컴프리헨션\(comprehension\)](ch15-comprehension.md)
 * [예외](ch16-Exceptions.md)
 * [람다](ch17-Lambdas.md)
