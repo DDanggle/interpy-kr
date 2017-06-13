@@ -81,7 +81,7 @@ def fibon(n):
 ```py
 def generator_function():
     for i in range(3):
-    yield i
+        yield i
 
 gen = generator_function()
 print(next(gen))
