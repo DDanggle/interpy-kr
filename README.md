@@ -36,7 +36,7 @@
 * [가상환경](ch11-Virtual-Environment.md)
 * [콜렉션\(collections\)](ch12-Collections.md)
 * [열거\(enumerate\)](ch13-Enumerate.md)
-* [객체 탐구](ch14-Object introspection.md)
+* [객체 탐구](ch14-Object-introspection.md)
 * [컴프리헨션\(comprehension\)](ch15-comprehension.md)
 * [예외](ch16-Exceptions.md)
 * [람다](ch17-Lambdas.md)
@@ -68,8 +68,9 @@
 
 * [땡글이](http://ddanggle.github.io/)
 * 추가로 [**junhyungjin**](https://github.com/junhyungjin) 께서 많이 도와주셨습니다. 모든 글을 꼼꼼히 읽고 피드백 해주셨습니다. 
+* [**leop0ld**](https://github.com/leop0ld) 께서 전체적인 번역의 어투나 다른 분들의 참여를 돕기 위해 함께 멤버로 추가했습니다. 함께 하고 싶으신 분은 언제든 제게 알려주셔요. 
 
-이썬 팁에 관해 번역하며 했던 고민들이나, 이야기들은 블로그를 통해 풀려고 합니다. 번역이 이상하거나, 콘텐츠가 업데이트되어 확인하지 못한 경우에는 번역자 [땡글이](mailto:ddanggle.y@gmail.com)로 메일을 주시거나 [풀리퀘](https://github.com/DDanggle/interpy-kr) 해주시면 수정하도록 하겠습니다.
+파이썬 팁에 관해 번역하며 했던 고민들이나, 이야기들은 블로그를 통해 풀려고 합니다. 번역이 이상하거나, 콘텐츠가 업데이트되어 확인하지 못한 경우에는 번역자 [땡글이](mailto:ddanggle.y@gmail.com)로 메일을 주시거나 [풀리퀘](https://github.com/DDanggle/interpy-kr) 해주시면 수정하도록 하겠습니다.
 
 ---
 

@@ -66,7 +66,7 @@ def test_args_kwargs(arg1, arg2, arg3):
 인자3: 5
 
 # 이제 **kwargs:
->>> kwargs = {"arg3": 3, "arg2": "two", "arg1": 5} # 키는 위 함수 매개변수의 이름과 같아야합니다.
+>>> kwargs = {"arg3": 3, "arg2": "two", "arg1": 5} # 키는 위 함수의 매개변수의 이름과 같아야합니다.
 >>> test_args_kwargs(**kargs)
 인자1: 5
 인자2: two
