@@ -36,7 +36,7 @@ print(result)
 
 # 여기서 예외처리를 맞닥뜨렸네요! 왜 그럴까요?
 # 파이썬 인터프리터는 우리가 result라 부르는 변수를 가지고 있지 않다고 말하네요.
-# 왜냐하면 result 변수는 변수가 생성된 함수 안에서 유효하기 때문에, global이 아니라면 접근할 수 없습니다.
+# 왜냐하면 result 변수는 변수가 생성된 함수 안에서만 유효하기 때문에, global이 아니라면 접근할 수 없습니다.
 Traceback (most recent call last):
   File "<console>", line 1, in <module>
 NameError: name 'result' is not defined
