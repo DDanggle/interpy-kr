@@ -19,8 +19,8 @@
 가장 중요한 명령어는: 
 
 ```
-  $ virtualenv myproject
-  $ source bin/activate
+  $ virtualenv myvenv
+  $ source myvenv/bin/activate
 ```
 
 첫번째 명령은 `myproject`폴더 안에 분리된 가상환경을 생성하는 것이고, 두번째 명령어는 분리된 가상환경을 실행시킵니다. 
@@ -31,7 +31,7 @@ virtualenv를 생성하는 동안  virtualenv가 시스템의 `site-packages` �
 virtualenv가 시스템 site-packages 에 액세스하게하려면 다음과 같이 virtualenv를 만들 때 --system-site-packages 스위치를 사용하십시오.
 
 ```
-  $ virtualenv --system-site-packages mycoolproject
+  $ virtualenv --system-site-packages mycoolvenv
 ```
 
 자 이제 여러분은 그 어떤 라이브러리도 전역 라이브러리나 라이브러리나 다른 환경에 영향을 끼치지 않고 설치할 수 있습니다.  
