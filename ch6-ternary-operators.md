@@ -4,10 +4,10 @@
 
 아래에 기본 코드 청사진과,  조건 표현식을 사용한 예시들을 소개합니다.
 
-##### 코드의 청사진**:**
+##### 코드의 청사진
 
 ```py
-condition_is_true if condition_ture else condition_is_false
+condition_is_true if condition_true else condition_is_false
 ```
 
 **예시:**
