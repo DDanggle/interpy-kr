@@ -7,7 +7,7 @@
 ##### 코드의 청사진
 
 ```py
-condition_is_true if condition_true else condition_is_false
+condition_is_true if condition else condition_is_false
 ```
 
 **예시:**
