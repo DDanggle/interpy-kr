@@ -127,7 +127,7 @@ def a_new_decorator(a_func):
     a_func()
 
     print "a_function_requiring_decoration()가 실행된 후에 좀 지루한 일을 해야합니다"
-  return wrapTheFunction()
+  return wrapTheFunction
 
 def a_function_requiring_decoration():
   print "저는 고약한 냄새를 없애기 위해 뭔가 추가된 함수입니다"
