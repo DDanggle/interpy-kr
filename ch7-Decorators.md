@@ -207,7 +207,7 @@ def decorator_name(f):
 
 @decorator_name
 def func():
-  print "함수가 실행 중입니다."
+  return "함수가 실행 중입니다."
 
 can_run = True
 print(func())
