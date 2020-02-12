@@ -70,8 +70,8 @@ add_to(3)
 def add_to(element, target=None):
   if target is None:
       target = []
-      target.append(element)
-    return target
+  target.append(element)
+  return target
 ```
 
 이제는 `target`인자 없이 함수를 호출 하더라도 새로운 리스트가 생성됩니다. 예를 들어 보겠습니다.
